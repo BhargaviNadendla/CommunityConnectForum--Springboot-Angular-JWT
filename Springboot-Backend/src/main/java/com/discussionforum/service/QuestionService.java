@@ -2,6 +2,7 @@ package com.discussionforum.service;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import javax.persistence.EntityManager;
@@ -54,5 +55,10 @@ private EntityManager entityManager;
 	
 	public List<Question> findAll() {
 		return questionRepository.findAll();
+	}
+
+	public List<Question> findByTagId(Long id) {
+		
+		return questionRepository.findByTagId(id);
 	}
 }

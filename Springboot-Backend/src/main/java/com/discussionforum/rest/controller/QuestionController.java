@@ -1,11 +1,13 @@
 package com.discussionforum.rest.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +36,12 @@ public class QuestionController {
 	@GetMapping("/api/list/questions")
 	public List<Question> findAll() {
 		return questionService.findAll();
+	}
+	
+	@GetMapping("/api/list/questions/tag/{id}")
+	@PreAuthorize("hasRole('USER')")
+	public List<Question> findByTagId(@PathVariable Long id) {
+		return questionService.findByTagId(id);
 	}
 }
 
