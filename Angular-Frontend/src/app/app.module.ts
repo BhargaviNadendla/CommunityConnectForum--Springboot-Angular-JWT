@@ -14,6 +14,7 @@ import {RouterModule} from '@angular/router';
 import { QuestionListComponent } from './questions/question-list/question-list.component';
 import { AddformComponent } from './addform/addform.component';
 import {HomeComponent} from './home/home.component';
+import { TagsListComponent } from './tags/tags-list/tags-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {HomeComponent} from './home/home.component';
     RegisterComponent,
     QuestionListComponent,
     AddformComponent,
-    HomeComponent
+    HomeComponent,
+    TagsListComponent
    ],
   imports: [
     BrowserModule,

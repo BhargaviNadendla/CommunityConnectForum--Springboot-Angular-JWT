@@ -11,4 +11,8 @@ export class QuestionService {
   get() {
     return this.http.get('http://localhost:8080/api/list/questions');
   }
+
+  getByTag(id) {
+    return this.http.get('http://localhost:8080/api/list/questions/tag/'+id);
+  }
 }
